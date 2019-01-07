@@ -1,10 +1,10 @@
 # videoLogger
 recording video archive with reference to time  h264  python opencv
 
-# Requirements
+## Requirements
 openCV
 
-# Usage
+## Usage
 Set number youre camera 
 ```
 cap = cv2.VideoCapture(0)
