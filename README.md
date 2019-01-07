@@ -13,6 +13,7 @@ cap = cv2.VideoCapture(0)
 
 `pyhon videoLogger.py`
 
+The video file will be saved to the current directory
+
 ![](./output.png)
 
-The video file will be saved to the current directory
