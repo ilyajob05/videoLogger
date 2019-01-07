@@ -10,7 +10,7 @@ Set number youre camera
 cap = cv2.VideoCapture(0)
 
 ```
-
+Run
 `pyhon videoLogger.py`
 
 The video file will be saved to the current directory
