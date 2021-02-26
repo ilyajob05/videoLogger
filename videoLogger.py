@@ -29,21 +29,22 @@ while True:
     # Capture frame-by-frame
     ret, frame = cap.read()
 
+
+    frames.append(cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY))
+    if len(frames) == num_queue:
+        moved_mask = frame_diff(frames)
+        cv2.imshow('moved_mask', moved_mask)
+
     # Our operations on the frame come here -1, 0, 1, 2
     # frame = cv2.flip(frame, -1)
     frame = cv2.rectangle(frame, (0, 0), (455, 30), (0,0,0), thickness=-1)
     frame = cv2.putText(frame, time.asctime(), (10, 25), cv2.FONT_HERSHEY_SIMPLEX, 1.0, (0, 255, 0), lineType=cv2.LINE_AA, thickness=2)
 
-    frames.append(frame)
-    if len(frames) == num_queue:
-        moved_mask = frame_diff(frames)
-        cv2.imshow('moved_mask', moved_mask)
-
     # Display the resulting frame
     cv2.imshow('frame',frame)
 
     out.write(frame)
-    if cv2.waitKey(1000) & 0xFF == ord('q'):
+    if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
 # When everything done, release the capture
