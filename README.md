@@ -1,5 +1,6 @@
 # videoLogger
 recording video archive with reference to time  h264  python opencv
+it is possible to record video when there is movement
 
 ## Requirements
 openCV
